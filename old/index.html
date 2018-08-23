@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
+  <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="script.js"></script>
+  <script src="YouTubeSubtitle.js"></script>
+</head>
+
+<body>
+  <div id="sidedrawer" class="mui--no-user-select">
+    <div id="sidedrawer-brand" class="mui--appbar-line-height">
+      <span class="mui--text-title">Option</span>
+    </div>
+    <div class="mui-divider"></div>
+    <ul>
+      <li>
+        <strong>字幕の言語(工事中)</strong>
+        <ul>
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>字幕の大きさ(工事中)</strong>
+        <ul>
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <strong>Category 3</strong>
+        <ul>
+          <li><a href="#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <header id="header">
+    <div class="mui-appbar mui--appbar-line-height">
+      <div class="mui-container-fluid">
+        <div style="height:30px">
+            <table  width="100%">
+            <tr style="vertical-align:middle">
+              <td class="mui--appbar-height">
+                  <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+                  <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+                  <span class="mui--text-title">Add Subtitle</span>   
+              </td>
+              <td class="mui--appbar-height" align="right">  
+                <Input id="url" placeholder="URL or VideoID" style="height:24px"/>
+                <button class="mui-btn mui-btn--small" id="submit">送信</button>
+             </td>
+            </tr>
+        </table>
+        </div>
+      
+      </div>
+    </div>
+  </header>
+
+  <div id="content-wrapper">
+    <div class="mui--appbar-height"></div>
+    <div class="mui-container-fluid">
+      <div id=main>
+        <div id="youtube-movie">
+          <div id="youtube-movie-content">
+            <div id="player"></div>
+            <div id="subtitle">
+              <span id="subText">loading</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="yfaSample.js"></script>
+    </div>
+  </div>
+
+</body>
+
+</html>

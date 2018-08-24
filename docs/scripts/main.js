@@ -10,21 +10,26 @@ jQuery(function () {
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         }
     });
-    
-    $('.accordion').children().click(function () {
+
+    //アコーディオンメニュー
+    $('.accordion').click(function () {
         $(this).nextAll().slideToggle(200);
+    });
+
+
+    $('#subTitleSize').html($('#subTitleSlider').val());
+    $('#subTitleSlider').on('input change', function() {
+      // 変動
+      var per =  $(this).val();
+      $('#subTitleSize').html(per);
+      $('#subText').css('font-size',2*per*0.01+"vw");
+
     });
 
     //送信前に処理をする
     $('form').on('submit', function(){
 
         this.getElementsByTagName("input")[0].value =  getVideoId(this.getElementsByTagName("input")[0].value);
-        //
-        // バリデーションチェックや、データの加工を行う。
-        //
-    
-        //バリデーションチェックの結果submitしない場合、return falseすることでsubmitを中止することができる。
-//        return false;
-    
+       
     });
 });

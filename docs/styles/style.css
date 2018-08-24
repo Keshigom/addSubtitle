@@ -41,8 +41,8 @@
   }
   
   #subtitle>span{
-    margin : 0px;
-    padding: 0px 0px;
+    line-height:1;
+    font-size: 2.5vw;
     background-color: rgba(0,0,0,0.5);
   }
   

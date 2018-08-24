@@ -40,6 +40,11 @@ function setUp() {
         getVideoId(ytPlayer.getVideoUrl()),
         "en"
     );
+
+    subTitleCN = new YouTubeSubtitle(
+        getVideoId(ytPlayer.getVideoUrl()),
+        "zh-CN"
+    );
 }
 
 // プレーヤーの準備ができたとき
@@ -116,11 +121,17 @@ function dispPlayerTime() {
     }
 }
 
-var subText = document.getElementById("subText");
 function updateSubText() {
+    var subText = document.getElementById("subText");
     var time = ytPlayer.getCurrentTime().toFixed(1);
-    subText.innerHTML = subTitleJP.getSubtitle(time) + "<br>";
-    subText.innerHTML += subTitleEN.getSubtitle(time) + "<br>";
+    var isJP = document.getElementById("isSubtitleJP").checked;
+    var isEN = document.getElementById("isSubtitleEN").checked;
+    var isCN = document.getElementById("isSubtitleCN").checked;
+    subText.innerHTML = "";
+    if (isJP) subText.innerHTML += subTitleJP.getSubtitle(time) + "<br>";
+    if (isEN) subText.innerHTML += subTitleEN.getSubtitle(time) + "<br>";
+    if (isCN) subText.innerHTML += subTitleCN.getSubtitle(time) + "<br>";
+
 }
 
 function getParam(name, url) {

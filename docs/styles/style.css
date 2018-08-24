@@ -17,3 +17,52 @@
 .closed{
     display: none;
 }
+
+/*player css*/
+#main{
+    margin: 5px;  
+  }
+  #player{
+    position:absolute;
+    top:0px; 
+    left:0px; 
+    z-index: 1; 
+  }
+  
+  #subtitle{
+    position:absolute; 
+    width: 100% !important;
+    bottom: 20px; 
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0);
+    pointer-events: none;
+    z-index: 2; 
+  }
+  
+  #subtitle>span{
+    margin : 0px;
+    padding: 0px 0px;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  #youtube-movie {
+  margin: 0 auto;
+  width: 100%;
+  max-width: calc(180vh - 150px);
+  }
+  
+  #youtube-movie-content {
+  padding-top: 56.25%;
+  position: relative;
+  width: 100%;
+  }
+  
+  #youtube-movie-content iframe {
+  height: 100% !important;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100% !important;
+  }
+  

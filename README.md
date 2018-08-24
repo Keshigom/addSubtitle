@@ -1,1 +1,2 @@
 # addSubtitle
+YouTubeの動画の字幕を２つ表示させるツール。

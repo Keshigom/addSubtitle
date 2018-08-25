@@ -23,7 +23,7 @@
     margin: auto;
     padding: 5px;
     /* ヘッダーとパディング分を差し引いて 16:9 の領域に調整する*/
-    max-width: calc(16/9*calc(100vh - 74px));
+    max-width: calc(16/9*calc(100vh - 126px));
  
   }
   #player{

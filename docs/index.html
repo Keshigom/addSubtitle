@@ -27,7 +27,7 @@
     <script src="scripts/main.js"></script>
 
     <!-- Always shows a header, even in smaller screens. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header ">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header mdl-layout__header--scroll">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
@@ -46,6 +46,7 @@
                         </div>
                     </div>
                 </form>
+
             </div>
         </header>
         <div class="mdl-layout__drawer">
@@ -75,7 +76,7 @@
                     <table class="closed">
                         <tr>
                             <td>
-                                <input id="subTitleSlider"class="mdl-slider mdl-js-slider" type="range" min="50" max="200" value="100" tabindex="0">
+                                <input id="subTitleSlider" class="mdl-slider mdl-js-slider" type="range" min="50" max="200" value="100" tabindex="0">
                             </td>
                             <td>
                                 <span id="subTitleSize"></span>%
@@ -84,21 +85,19 @@
 
                     </table>
                 </li>
-                <!-- <li class="mdl-layout ">
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect accordion">Menu 1</button>
-                    <ul class="closed">
-                        <li>1つめの項目</li>
-                        <li>2つめの項目</li>
-                        <li>3つめの項目</li>
-                    </ul>
-                </li> -->
+                <li class="mdl-layout ">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="fullScreenButton" >
+                        <i class="material-icons">fullscreen</i>
+                        フルスクリーン
+                    </button>
+                </li>
             </ul>
 
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">
                 <!-- Your content goes here -->
-                <div id=main>
+                <div id="main">
                     <div id="youtube-movie">
                         <div id="youtube-movie-content">
                             <div id="player"></div>

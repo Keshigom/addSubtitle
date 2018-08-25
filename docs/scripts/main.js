@@ -26,6 +26,27 @@ jQuery(function () {
 
     });
 
+    $('#fullScreenButton').click(function(){
+        var isFullScreen = document.fullscreenEnabled ||
+        document.webkitFullscreenEnabled ||
+        document.mozFullScreenEnabled ||
+        document.msFullscreenEnabled ||
+        false;
+        console.log("fullscreen" + isFullScreen);
+        var elem = document.getElementById("youtube-movie");
+        if( isFullScreen ){
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen(); 
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen(); 
+            }
+        }
+    });
+
     //送信前に処理をする
     $('form').on('submit', function(){
 

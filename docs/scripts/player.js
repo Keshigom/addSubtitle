@@ -24,7 +24,7 @@ function onYouTubeIframeAPIReady() {
             // イベントの設定
             events: {
                 'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
-                'onStateChange': onPlayerStateChange // プレーヤーの状態が変更されたときに実行
+                'onStateChange': onPlayerStateChange, // プレーヤーの状態が変更されたときに実行
             }
         }
     );

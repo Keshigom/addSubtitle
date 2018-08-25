@@ -48,9 +48,9 @@
   
   #youtube-movie {
     background-color: #000;
-  margin: 0 auto;
-  width: 100%;
-  max-width: calc(180vh - 150px);
+    margin: 0 auto;
+    width: 100%;
+    max-width: calc(180vh - 150px);
   }
   
   #youtube-movie-content {

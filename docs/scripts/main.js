@@ -4,6 +4,7 @@ jQuery(function () {
     $('.mdl-layout').on('mdl-componentupgraded', function (e) {
         if ($(e.target).hasClass('mdl-layout')) {
             // IFrame Player API の読み込み
+            console.log("mdl-comupg");
             var tag = document.createElement('script');
             tag.src = "https://www.youtube.com/iframe_api";
             var firstScriptTag = document.getElementsByTagName('script')[0];

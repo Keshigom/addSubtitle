@@ -52,7 +52,7 @@ var playerReady = false;
 function onPlayerReady(event) {
     // 再生可能
     playerReady = true;
-
+    console.log("ready");
 }
 
 // プレーヤーの状態が変更されたとき

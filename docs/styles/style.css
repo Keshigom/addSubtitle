@@ -20,7 +20,11 @@
 
 /*player css*/
 #main{
-    margin: 5px;  
+    margin: auto;
+    padding: 5px;
+    /* ヘッダーとパディング分を差し引いて 16:9 の領域に調整する*/
+    max-width: calc(16/9*calc(100vh - 74px));
+ 
   }
   #player{
     position:absolute;
@@ -50,15 +54,16 @@
     background-color: #000;
     margin: 0 auto;
     width: 100%;
-    max-width: calc(180vh - 150px);
+    max-width: calc(16/9*100vh);
   }
   
   #youtube-movie-content {
     background-color: #000;
 
-  padding-top: 56.25%;
+  padding-top: calc(9/16*100%);
   position: relative;
   width: 100%;
+  
   }
   
   #youtube-movie-content iframe {

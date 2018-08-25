@@ -33,7 +33,7 @@ jQuery(function () {
         document.msFullscreenEnabled ||
         false;
         console.log("fullscreen" + isFullScreen);
-        var elem = document.getElementById("youtube-movie-content");
+        var elem = document.getElementById("youtube-movie");
         if( isFullScreen ){
             if (elem.requestFullscreen) {
                 elem.requestFullscreen(); 

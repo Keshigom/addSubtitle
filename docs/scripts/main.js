@@ -7,7 +7,7 @@ $(window).on('load', () => {
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  });
+});
 
 jQuery(function () {
 
@@ -30,39 +30,39 @@ jQuery(function () {
 
 
     $('#subTitleSize').html($('#subTitleSlider').val());
-    $('#subTitleSlider').on('input change', function() {
-      // 変動
-      var per =  $(this).val();
-      $('#subTitleSize').html(per);
-      $('#subText').css('font-size',2*per*0.01+"vw");
+    $('#subTitleSlider').on('input change', function () {
+        // 変動
+        var per = $(this).val();
+        $('#subTitleSize').html(per);
+        $('#subText').css('font-size', 2 * per * 0.01 + "vw");
 
     });
 
-    $('#fullScreenButton').click(function(){
+    $('#fullScreenButton').click(function () {
         var isFullScreen = document.fullscreenEnabled ||
-        document.webkitFullscreenEnabled ||
-        document.mozFullScreenEnabled ||
-        document.msFullscreenEnabled ||
-        false;
+            document.webkitFullscreenEnabled ||
+            document.mozFullScreenEnabled ||
+            document.msFullscreenEnabled ||
+            false;
         console.log("fullscreen" + isFullScreen);
         var elem = document.getElementById("youtube-movie");
-        if( isFullScreen ){
+        if (isFullScreen) {
             if (elem.requestFullscreen) {
-                elem.requestFullscreen(); 
+                elem.requestFullscreen();
             } else if (elem.webkitRequestFullscreen) {
                 elem.webkitRequestFullscreen();
             } else if (elem.mozRequestFullScreen) {
                 elem.mozRequestFullScreen();
             } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen(); 
+                elem.msRequestFullscreen();
             }
         }
     });
 
     //送信前に処理をする
-    $('form').on('submit', function(){
+    $('form').on('submit', function () {
 
-        this.getElementsByTagName("input")[0].value =  getVideoId(this.getElementsByTagName("input")[0].value);
-       
+        this.getElementsByTagName("input")[0].value = YouTubeURL.extractVideoId(this.getElementsByTagName("input")[0].value);
+
     });
 });

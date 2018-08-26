@@ -3,7 +3,7 @@ function onYouTubeIframeAPIReady() {
 
     var id = "-sGiE10zNQM";
     //URLのパラメータから動画を読み込む
-    if (getParam("video") != null && getParam("video") != "") {
+    if ((getParam("video"))) {
         id = getParam("video");
         console.log(id);
     }
@@ -33,16 +33,16 @@ function onYouTubeIframeAPIReady() {
 
 function setUp() {
     subTitleJP = new YouTubeSubtitle(
-        getVideoId(ytPlayer.getVideoUrl()),
+        YouTubeURL.extractVideoId(ytPlayer.getVideoUrl()),
         "ja"
     );
     subTitleEN = new YouTubeSubtitle(
-        getVideoId(ytPlayer.getVideoUrl()),
+        YouTubeURL.extractVideoId(ytPlayer.getVideoUrl()),
         "en"
     );
 
     subTitleCN = new YouTubeSubtitle(
-        getVideoId(ytPlayer.getVideoUrl()),
+        YouTubeURL.extractVideoId(ytPlayer.getVideoUrl()),
         "zh-CN"
     );
 }
@@ -62,7 +62,7 @@ function onPlayerStateChange(event) {
     if (ytStatus == -1) {
         console.log("初期読み込み");
         var url = ytPlayer.getVideoUrl();
-        console.log("読み込み完了" + getVideoId(url));
+        console.log("読み込み完了" + YouTubeURL.extractVideoId(url));
         setUp();
     }
     // 再生終了したとき
@@ -94,23 +94,6 @@ function onPlayerStateChange(event) {
         console.log('頭出し済み');
     }
 }
-
-
-
-
-//動画IDの取得
-function getVideoId(str) {
-    var str = str.replace("https://youtu.be/", "");
-    var str = str.replace("https://www.youtube.com/watch?v=", "");
-
-    if (str.indexOf("?") > 0)
-        str = str.substring(0, str.indexOf("?"));
-
-    if (str.indexOf("&") > 0)
-        str = str.substring(0, str.indexOf("&"));
-    return str
-}
-
 
 // 一定間隔での処理
 var intervalId;

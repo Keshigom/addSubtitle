@@ -35,12 +35,9 @@ class YouTubeSubtitle {
         var time = (1.0*second).toFixed(1);
         var end = 0.0;
         var str = "";
-        var text;
         $(this.xml).find("text[start^='" + String(time) + "']").each(function () {
             end = 1 * time + 1 * $(this).attr("dur");
             str = $(this).text();
-            //console.log("sub:" + text  + "\nstart:" + $(this).attr("start") + "　end:" + endtime[0])
-           // str = text;
         });
     
         if(end != 0)this.endTime = end;

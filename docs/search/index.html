@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>AddSubtitle:検索</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Material Design Lite -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css" />
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!--origin-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="searchStyle.css">
+</head>
+
+<body>
+    <!-- jquery -->
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="search.js"></script> 
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <!--ヘッダー-->
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+
+                <!-- ヘッダーの内容-->
+                <span class="mdl-layout-title">AddSubtitle</span>
+                <!--右寄せ用の余白-->
+                <div class="mdl-layout-spacer"></div>
+
+                <!-- 検索欄-->
+                <form action="">
+                    <!-- 送信先　＃（自分）-->
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" for="searchVideo">
+                            <i class="material-icons">search</i>
+                        </label>
+                        <div class="mdl-textfield__expandable-holder" style="width:300px;">
+                            <input class="mdl-textfield__input" type="text" id="searchVideo" name='video' value="">
+                            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </header>
+
+        <!-- サイドメニュー -->
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">AddSubtitle</span>
+            <ul class="demo-list-item mdl-list">
+                <li class="mdl-layout">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect accordion">字幕の言語</button>
+                    <div class="closed" style="margin-left: 20px">
+                        <label class="mdl-checkbox mdl-js-checkbox" for="isSubtitleJP">
+                            <input type="checkbox" id="isSubtitleJP" class="mdl-checkbox__input" checked>
+                            <span class="mdl-checkbox__label">日本語</span>
+                        </label>
+                        <label class="mdl-checkbox mdl-js-checkbox" for="isSubtitleEN">
+                            <input type="checkbox" id="isSubtitleEN" class="mdl-checkbox__input" checked>
+                            <span class="mdl-checkbox__label">英語</span>
+                        </label>
+                        <label class="mdl-checkbox mdl-js-checkbox" for="isSubtitleCN">
+                            <input type="checkbox" id="isSubtitleCN" class="mdl-checkbox__input">
+                            <span class="mdl-checkbox__label">中国語(简体)</span>
+                        </label>
+                    </div>
+                </li>
+                <li class="mdl-layout">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect accordion">字幕の大きさ</button>
+                    <table class="closed">
+                        <tr>
+                            <td>
+                                <input id="subTitleSlider" class="mdl-slider mdl-js-slider" type="range" min="50" max="200" value="100" tabindex="0">
+                            </td>
+                            <td>
+                                <span id="subTitleSize"></span>%
+                            </td>
+                        </tr>
+
+                    </table>
+                </li>
+                <li class="mdl-layout ">
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="fullScreenButton">
+                        <i class="material-icons">fullscreen</i>
+                        フルスクリーン
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+
+        <!-- メイン -->
+        <main class="mdl-layout__content">
+            <div class="page-content">
+
+                <!-- 内容-->
+                <!-- グリッドレイアウト-->
+                <div id="result" class="mdl-grid">
+
+                    <!-- <div class="mdl-cell mdl-cell--3-col mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__title">
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                RWBY Chapter 1: Ruby Rose | Rooster Teeth
+                            </div>
+                            <div class="mdl-layout-spacer"></div>
+
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                    再生
+                                </a>
+                            </div>
+                            <div class="mdl-card__menu">
+                                1:56
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                </div>
+
+
+                <!-- end page contents -->
+            </div>
+        </main>
+
+    </div>
+
+
+</body>
+
+</html>

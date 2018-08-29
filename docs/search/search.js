@@ -28,7 +28,6 @@ function generateVideoCard(videoId, title, thumbnails,channelTitle) {
         "</a>" +
         "</div>" +
         "<div class='mdl-card__menu'>" +
-          "1:56" +
         "</div>" +
         "</div>" +
         "</div>";
@@ -67,8 +66,6 @@ $(function () {
             );
         });
     });
-    console.log(apiUrl);
-    console.log(listVideo);
 });
 
 function getParam(name, url) {

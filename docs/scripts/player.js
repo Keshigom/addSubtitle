@@ -1,12 +1,8 @@
 // YouTubeの埋め込み
 function onYouTubeIframeAPIReady() {
 
-    var id = "-sGiE10zNQM";
     //URLのパラメータから動画を読み込む
-    if ((getParam("video"))) {
-        id = getParam("video");
-        console.log(id);
-    }
+    var id =  getParam("video") || "-sGiE10zNQM";
 
     ytPlayer = new YT.Player(
         'player', // 埋め込む場所の指定
@@ -15,12 +11,10 @@ function onYouTubeIframeAPIReady() {
             height: 390, // プレーヤーの高さ
             videoId: id, // YouTubeのID
             wmode: 'transparent',
-
             //プレイヤーのパラメータ
             playerVars: {
                 fs: 0
             },
-
             // イベントの設定
             events: {
                 'onReady': onPlayerReady, // プレーヤーの準備ができたときに実行
@@ -31,6 +25,18 @@ function onYouTubeIframeAPIReady() {
 
 }
 
+
+// 一定間隔での処理
+(function () {
+    var requestAnimationFrame =
+        window.requestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.msRequestAnimationFrame;
+        
+    window.requestAnimationFrame = requestAnimationFrame;
+})();
+
 function setUp() {
     subTitleJP = new YouTubeSubtitle(
         YouTubeURL.extractVideoId(ytPlayer.getVideoUrl()),
@@ -40,11 +46,15 @@ function setUp() {
         YouTubeURL.extractVideoId(ytPlayer.getVideoUrl()),
         "en"
     );
-
     subTitleCN = new YouTubeSubtitle(
         YouTubeURL.extractVideoId(ytPlayer.getVideoUrl()),
         "zh-CN"
     );
+
+    (function frameLoop() {
+        window.requestAnimationFrame(frameLoop);
+        updateSubText();
+    })();
 }
 
 // プレーヤーの準備ができたとき
@@ -72,12 +82,8 @@ function onPlayerStateChange(event) {
     // 再生中のとき
     if (ytStatus == YT.PlayerState.PLAYING) {
         console.log('再生中');
-        // 処理の停止（中断）
-        clearInterval(intervalId);
-        intervalId = setInterval(dispPlayerTime, 100);
     }
     else {
-        // 処理の停止（中断）
         clearInterval(intervalId);
     }
     // 停止中のとき
@@ -95,14 +101,7 @@ function onPlayerStateChange(event) {
     }
 }
 
-// 一定間隔での処理
-var intervalId;
-function dispPlayerTime() {
-    if (playerReady) {
-        //console.log(ytPlayer.getCurrentTime());
-        updateSubText();
-    }
-}
+
 
 function updateSubText() {
     var subText = document.getElementById("subText");
